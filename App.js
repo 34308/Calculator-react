@@ -13,12 +13,14 @@ import SplashScreen from 'react-native-splash-screen';
 
 export default class App extends Component {
   componentDidMount() {
-    console.log("logiing");
-    SplashScreen.hide();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
   }
 
   sqrt = '\u221a';
   constructor() {
+    SplashScreen.show();
     super();
     this.state = {
       myText: '',
@@ -133,7 +135,7 @@ export default class App extends Component {
     },
     {
       title: 'x!',
-      onPress: () => this.addSign('!'),
+      onPress: () => this.check('!'),
       style: LandscapeStyles.button,
     },
     {
@@ -153,7 +155,7 @@ export default class App extends Component {
     },
     {
       title: '/',
-      onPress: () => this.addSign('/'),
+      onPress: () => this.check('/'),
       style: LandscapeStyles.buttonOperations,
     },
     {
@@ -185,7 +187,7 @@ export default class App extends Component {
     },
     {
       title: 'X',
-      onPress: () => this.addSign('*'),
+      onPress: () => this.check('*'),
       style: LandscapeStyles.buttonOperations,
     },
     {
@@ -215,7 +217,7 @@ export default class App extends Component {
     },
     {
       title: '-',
-      onPress: () => this.addSign('-'),
+      onPress: () => this.check('-'),
       style: LandscapeStyles.buttonOperations,
     },
     {
@@ -247,7 +249,7 @@ export default class App extends Component {
     },
     {
       title: '+',
-      onPress: () => this.addSign('+'),
+      onPress: () => this.check('+'),
       style: LandscapeStyles.buttonOperations,
     },
     {
@@ -267,7 +269,7 @@ export default class App extends Component {
     },
     {
       title: ',',
-      onPress: () => this.addSign('.'),
+      onPress: () => this.check('.'),
       style: LandscapeStyles.buttonNumbers,
     },
     {

@@ -24,12 +24,12 @@ public class MainActivity extends ReactActivity {
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new MainActivityDelegate(this, getMainComponentName());
   }
-  @Override
-  public void onStart(){
-    super.onStart();
-    // put your code here...
-    SplashScreen.show(this);
-  }
+//  @Override
+//  public void onStart(){
+//    super.onStart();
+//    // put your code here...
+//    SplashScreen.show(this);
+//  }
 
   public static class MainActivityDelegate extends ReactActivityDelegate {
     public MainActivityDelegate(ReactActivity activity, String mainComponentName) {
