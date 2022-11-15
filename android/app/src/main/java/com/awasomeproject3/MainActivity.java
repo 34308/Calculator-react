@@ -1,9 +1,11 @@
 package com.awasomeproject3;
 
+import androidx.annotation.Nullable;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import org.devio.rn.splashscreen.SplashScreen;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -24,6 +26,21 @@ public class MainActivity extends ReactActivity {
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new MainActivityDelegate(this, getMainComponentName());
   }
+
+  @java.lang.Override
+  public int checkPermission(java.lang.String s, int i, int i1) {
+    return 0;
+  }
+
+  @java.lang.Override
+  public int checkSelfPermission(java.lang.String s) {
+    return 0;
+  }
+
+  @java.lang.Override
+  public boolean shouldShowRequestPermissionRationale(java.lang.String s) {
+    return false;
+  }
 //  @Override
 //  public void onStart(){
 //    super.onStart();
@@ -33,7 +50,14 @@ public class MainActivity extends ReactActivity {
 
   public static class MainActivityDelegate extends ReactActivityDelegate {
     public MainActivityDelegate(ReactActivity activity, String mainComponentName) {
+
       super(activity, mainComponentName);
+    }
+
+    @java.lang.Override
+    protected void onCreate(android.os.Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      SplashScreen.show(getPlainActivity());
     }
 
     @Override

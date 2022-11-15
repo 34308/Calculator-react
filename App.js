@@ -20,7 +20,7 @@ export default class App extends Component {
 
   sqrt = '\u221a';
   constructor() {
-    SplashScreen.show();
+    //SplashScreen.show();
     super();
     this.state = {
       myText: '',
@@ -30,6 +30,7 @@ export default class App extends Component {
 
   buttons = [
     {
+      disabled: false,
       title: 'AC',
       onPress: () => this.clear(),
       style: styles.button,
@@ -41,87 +42,98 @@ export default class App extends Component {
       style: styles.button2,
     },
     {
+      disabled: false,
       title: '/',
       onPress: () => this.check('/'),
       style: styles.buttonOperations,
     },
     {
-      key: 3,
+      disabled: false,
       title: '7',
       onPress: () => this.addSign('7'),
       style: styles.buttonNumbers,
     },
     {
-      key: 4,
+      disabled: false,
       title: '8',
       onPress: () => this.addSign('8'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       key: 5,
       title: '9',
       onPress: () => this.addSign('9'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: 'X',
       onPress: () => this.check('*'),
       style: styles.buttonOperations,
     },
     {
+      disabled: false,
       title: '4',
       onPress: () => this.addSign('4'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: '5',
       onPress: () => this.addSign('5'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: '6',
       onPress: () => this.addSign('6'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: '-',
       onPress: () => this.check('-'),
       style: styles.buttonOperations,
     },
     {
-      key: 9,
+      disabled: false,
       title: '3',
       onPress: () => this.addSign('3'),
       style: styles.buttonNumbers,
     },
     {
-      key: 10,
+      disabled: false,
       title: '2',
       onPress: () => this.addSign('2'),
       style: styles.buttonNumbers,
     },
     {
-      key: 11,
+      disabled: false,
       title: '1',
       onPress: () => this.addSign('1'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: '+',
       onPress: () => this.check('+'),
       style: styles.buttonOperations,
     },
     {
+      disabled: false,
       title: '0',
       onPress: () => this.addSign('0'),
       style: styles.button2Numbers,
     },
     {
+      disabled: false,
       title: ',',
       onPress: () => this.addSign('.'),
       style: styles.buttonNumbers,
     },
     {
+      disabled: false,
       title: '=',
       onPress: () => this.result(),
       style: styles.buttonOperations,
@@ -325,6 +337,7 @@ export default class App extends Component {
     return this.buttons.map(item => {
       return (
         <TouchableOpacity
+          disabled={item.disabled}
           key={item.title}
           style={item.style}
           onPress={() => item.onPress()}>
