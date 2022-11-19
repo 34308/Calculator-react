@@ -13,9 +13,7 @@ import SplashScreen from 'react-native-splash-screen';
 
 export default class App extends Component {
   componentDidMount() {
-    setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
+    SplashScreen.hide();
   }
 
   sqrt = '\u221a';
